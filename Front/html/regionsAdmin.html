@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/regionsAdmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="shortcut icon" href="../assets/Logo.svg">
+    <title>Regions</title>
+</head>
+<body>
+    <header>
+        <div class="containerHeaderLeft">
+            <img src="../assets/Logo.svg" class="logoHeader" alt="logoHeader">
+        </div>
+        <div class="containerHeaderRight">
+            <a href="./customersAdmin.html" class="linkHeader space">Contactos</a>
+            <a href="./organizationsAdmin.html" class="linkHeader space">Compañías</a>
+            <a href="./users.html" class="linkHeader space">Usuarios</a>
+            <a href="./regionsAdmin.html" class="linkHeader space">Región / Ciudad</a>
+        </div>
+    </header>
+    <section class="secTreeRegions">
+        <div class="containerButton">
+            <button class="createRegion" id="createRegion">Agregar Región</button>
+        </div>
+        <input type="checkbox" name="checkRegion" id="checkRegion">
+        <input type="checkbox" name="checkCountry" id="checkCountry">
+        <input type="checkbox" name="checkCountryEdit" id="checkCountryEdit">
+        <input type="checkbox" name="checkCity" id="checkCity">
+        <input type="checkbox" name="checkCityEdit" id="checkCityEdit">
+        <div class="containerRecordRegion">
+            <div class="headerRegion">
+                <h1>Nueva Región</h1>
+                <div class="close">
+                    <label for="checkClose" class="labelClose">
+                        <i class="fas fa-times"></i>
+                    </label>
+                    <input type="checkbox" name="checkClose" id="checkClose" class="inputClose">
+                </div>
+            </div>
+            <div class="regionName">
+                <label for="inputRegion" class="labelRegion">Nombre: </label>
+                <input type="text" class="inputRegion" id="inputRegion">
+            </div>
+            <div class="containerButtonSaveRegion">
+                <button class="saveRegion" id="saveRegion">Guardar Región</button>
+            </div>
+        </div>
+        <div class="containerRecordCountry">
+            <div class="headerCountry">
+                <h2>Nuevo País</h2>
+                <div class="close">
+                    <label for="checkCloseCountry" class="labelCloseCountry">
+                        <i class="fas fa-times"></i>
+                    </label>
+                    <input type="checkbox" name="checkCloseCountry" id="checkCloseCountry" class="inputClose">
+                </div>
+            </div>
+            <div class="countryName">
+                <label for="inputCountry" class="labelCountry">Nombre: </label>
+                <input type="text" class="inputCountry" id="inputCountry">
+            </div>
+            <div class="containerButtonSaveCountry">
+                <button class="saveCountry" id="saveCountry">Guardar País</button>
+            </div>
+        </div>
+        <div class="containerRecordCity">
+            <div class="headerCity">
+                <h2>Nueva Ciudad</h2>
+                <div class="close">
+                    <label for="checkCloseCity" class="labelCloseCity">
+                        <i class="fas fa-times"></i>
+                    </label>
+                    <input type="checkbox" name="checkCloseCity" id="checkCloseCity" class="inputClose">
+                </div>
+            </div>
+            <div class="cityName">
+                <label for="inputCity" class="labelCiy">Nombre: </label>
+                <input type="text" class="inputCity" id="inputCity">
+            </div>
+            <div class="containerButtonSaveCity">
+                <button class="saveCity" id="saveCity">Guardar Ciudad</button>
+            </div>
+        </div>
+        <div class="containerEditCountry">
+            <div class="headerCountry">
+                <h3>Editar País</h3>
+                <div class="close">
+                    <label for="checkCloseCountryEdit" class="labelCloseCountry">
+                        <i class="fas fa-times"></i>
+                    </label>
+                    <input type="checkbox" name="checkCloseCountryEdit" id="checkCloseCountryEdit" class="inputClose">
+                </div>
+            </div>
+            <div class="countryName">
+                <label for="inputCountryEdit" class="labelCountry">Nombre: </label>
+                <input type="text" class="inputCountry" id="inputCountryEdit">
+            </div>
+            <div class="containerButtonSaveCountry">
+                <button class="saveCountry" id="saveCountryEdit">Modificar</button>
+            </div>
+        </div>
+        <div class="containerEditCity">
+            <div class="headerCity">
+                <h3>Editar Ciudad</h3>
+                <div class="close">
+                    <label for="checkCloseCityEdit" class="labelCloseCity">
+                        <i class="fas fa-times"></i>
+                    </label>
+                    <input type="checkbox" name="checkCloseCityEdit" id="checkCloseCityEdit" class="inputClose">
+                </div>
+            </div>
+            <div class="cityName">
+                <label for="inputCityEdit" class="labelCiy">Nombre: </label>
+                <input type="text" class="inputCity" id="inputCityEdit">
+            </div>
+            <div class="containerButtonSaveCity">
+                <button class="saveCity" id="saveCityEdit">Modificar</button>
+            </div>
+        </div>
+        <div id="containerRegions">
+        </div> 	
+    </section>
+    <div class="modal"></div>
+    <script src="../scripts/regions.js"></script>
+</body>
+</html>

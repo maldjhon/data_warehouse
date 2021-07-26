@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import "./variables.scss";
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.textWhite{
+    font-family: 'Open Sans', sans-serif;
+    color: $whiteColor;
+}
+
+.formatButton{
+    height: 41px;
+    border: solid;
+    border-width: 1px;
+    outline: none;
+}
+
+header{
+    background-color: $backgroundHeader;
+    display: flex;
+    justify-content: space-between;
+    .containerHeaderLeft{
+        display: flex;
+        margin: 12px 0px 12px 30px;
+        .logoHeader{
+            height: 50px;
+        }
+    }
+    .containerHeaderRight{
+        display: flex;
+        align-items: center;
+        margin: 23.6px 30px 22.8px 0px;
+        .linkHeader{
+            @extend .textWhite;
+            opacity: 0.7;
+            text-decoration: none;
+            &.space{
+                margin: 0px 34.3px 0px 0px;
+            }
+            &:hover{
+                opacity: 1;
+                text-decoration: underline;
+            }
+        }
+        .signOut{
+            width: 30px;
+            height: 30px;
+            border: solid;
+            border-width: 1px;
+            outline: none;
+            border-color: $whiteColor;
+            background-color: $backgroundHeader;
+            color: $whiteColor;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+    }
+}
+
+#popupSaveCompany{
+    display: none;
+    &:checked{
+        ~ .containerNewRecord{
+            display: flex;
+        }
+    }
+}
+
+#popupEditCompany{
+    display: none;
+    &:checked{
+        ~ .containerEditRecord{
+            display: flex;
+        }
+    }
+}
+
+.containerNewRecord{
+    display: none;
+    flex-direction: column;
+    background-color: $backgroundHeader;
+    border: solid;
+    border-width: 1px;
+    border-color: $backgroundHeader;
+    border-radius: 3px;
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    margin: 26px 76px 0px;
+    z-index: 1;
+    .headerCompany{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px;
+        h1{
+            color: $whiteColor;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 17px;
+        }
+        .close{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            right: 10px;
+            .labelClose{
+                position: absolute;
+                i{
+                    cursor: pointer;
+                    color: $whiteColor;
+                }
+            }
+            .inputClose{
+                position: absolute;
+                display: none;
+            }
+        }
+    }
+    .inputsName{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $whiteColor;
+        align-items: center;
+        margin: 0px 21.5px -45px;
+        border: solid;
+        border-radius: 6.5px;
+        border-width: 3px;
+        border-color: $baseColor;
+        padding: 20px;
+        z-index: 1;
+        .avatar{
+            width: 85px;
+            height: 85px;
+            position: relative;
+            .containerAvatar{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                border: solid;
+                width: 100%;
+                height: 100%;
+                border-color: $baseColor;
+                border-width: 2px;
+                background: $backgroundAvatar;
+                .camara{
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    background-color: $whiteColor;
+                    margin: 0px 3px 5px 0px;
+                    .containerIcon{
+                        width: 100%;
+                        height: 100%;
+                        background: $baseColor;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        i{
+                            color: $whiteColor;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        .containerInputName{
+            display: flex;
+            flex-direction: column;
+            .labelName{
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                &::after{
+                    content: '*';
+                    color: $redColor;
+                }
+            }
+            .inputName{
+                height: 35.5px;
+                @extend .formatButton;
+                border-color: $borderInput;
+                border-radius: 3.5px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+            }
+            .validationInput{
+                display: none;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                font-style: italic;
+                color: $redColor;
+            }
+        }
+    }
+    .containerRegion{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $whiteColor;
+        padding: 60px 33px 15px;
+        .containerInputName{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            .labelName{
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+            }
+            .inputName{
+                height: 35.5px;
+                @extend .formatButton;
+                border-color: $borderInput;
+                border-radius: 3.5px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+            }
+            .validationInput{
+                display: none;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                font-style: italic;
+                color: $redColor;
+            }
+        }
+    }
+    .containerButtonSave{
+        display: flex;
+        justify-content: flex-end;
+        background-color: $whiteColor;
+        padding: 0px 15px 15px;
+        .saveCompany{
+            @extend .formatButton;
+            width: 172px;
+            border-color: $backgroundHeader;
+            background-color: $backgroundHeader;
+            color: $whiteColor;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+        }
+    }
+}
+
+.containerEditRecord{
+    display: none;
+    flex-direction: column;
+    background-color: $backgroundHeader;
+    border: solid;
+    border-width: 1px;
+    border-color: $backgroundHeader;
+    border-radius: 3px;
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    margin: 26px 76px 0px;
+    z-index: 1;
+    .headerCompany{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px;
+        h2{
+            color: $whiteColor;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 17px;
+        }
+        .close{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            right: 10px;
+            .labelClose{
+                position: absolute;
+                i{
+                    cursor: pointer;
+                    color: $whiteColor;
+                }
+            }
+            .inputClose{
+                position: absolute;
+                display: none;
+            }
+        }
+    }
+    .inputsName{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $whiteColor;
+        align-items: center;
+        margin: 0px 21.5px -45px;
+        border: solid;
+        border-radius: 6.5px;
+        border-width: 3px;
+        border-color: $baseColor;
+        padding: 20px;
+        z-index: 1;
+        .avatar{
+            width: 85px;
+            height: 85px;
+            position: relative;
+            .containerAvatar{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                border: solid;
+                width: 100%;
+                height: 100%;
+                border-color: $baseColor;
+                border-width: 2px;
+                background: $backgroundAvatar;
+                .camara{
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    background-color: $whiteColor;
+                    margin: 0px 3px 5px 0px;
+                    .containerIcon{
+                        width: 100%;
+                        height: 100%;
+                        background: $baseColor;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        i{
+                            color: $whiteColor;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        .containerInputName{
+            display: flex;
+            flex-direction: column;
+            .labelName{
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                &::after{
+                    content: '*';
+                    color: $redColor;
+                }
+            }
+            .inputName{
+                height: 35.5px;
+                @extend .formatButton;
+                border-color: $borderInput;
+                border-radius: 3.5px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+            }
+            .validationInput{
+                display: none;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                font-style: italic;
+                color: $redColor;
+            }
+        }
+    }
+    .containerRegion{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $whiteColor;
+        padding: 60px 33px 15px;
+        .containerInputName{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            .labelName{
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+            }
+            .inputName{
+                height: 35.5px;
+                @extend .formatButton;
+                border-color: $borderInput;
+                border-radius: 3.5px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+            }
+            .validationInput{
+                display: none;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                font-style: italic;
+                color: $redColor;
+            }
+        }
+    }
+    .containerButtonSave{
+        display: flex;
+        justify-content: flex-end;
+        background-color: $whiteColor;
+        padding: 0px 15px 15px;
+        .saveCompany{
+            @extend .formatButton;
+            width: 172px;
+            border-color: $backgroundHeader;
+            background-color: $backgroundHeader;
+            color: $whiteColor;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+        }
+    }
+}
+
+.containerTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 39.6px 28px 0px 29.4px;
+    h2{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        font-size: 25px;
+    }
+    .containerButtons{
+        .buttonAddCompany{
+            @extend .formatButton;
+            width: 172px;
+            border-color: $backgroundHeader;
+            background-color: $backgroundHeader;
+            color: $whiteColor;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+    }
+}
+
+.containerSelectionCompanies{
+    display: flex;
+    justify-content: space-between;
+    margin: 73px 28px 4.5px;
+    #countSelection{
+        display: none;
+        height: 24px;
+        background-color: $hoverSelected;
+        font-family: 'Open Sans', sans-serif;
+        color: $baseColor;
+        padding: 3px 8px;
+        font-size: 13px;
+    }
+}
+
+.containerCompaniesDiv{
+    display: flex;
+    flex-direction: column;
+    border: solid $borderInput;
+    border-width: 1px;
+    margin: 0px 28px 0px;
+    .validationInput{
+        display: none;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        font-style: italic;
+        color: $redColor;
+    }
+    .headerContainer{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 56px;
+        border-bottom: solid $borderInput;
+        border-width: 1px;
+        .ocupation{
+            width: 11.11%;
+            &.titles{
+                text-align: center;
+                font-family: 'Open Sans', sans-serif;
+                color: $blackColor;
+            }
+        }
+    }
+    .companiesData{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 56px;
+        .ocupation{
+            width: 11.11%;
+            overflow: auto;
+            &::-webkit-scrollbar{
+                -webkit-appearance: none;
+                height: 5px;
+            }
+            &::-webkit-scrollbar-thumb{
+                border: 3px solid $borderInput;
+                border-radius: 10px
+            }
+            &.titles{
+                font-family: 'Open Sans', sans-serif;
+                color: $blackColor;
+            }
+            &.phone{
+                text-align: center;
+            }
+            &.actions{
+                font-family: 'Open Sans', sans-serif;
+                color: $baseColor;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.modal{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $blackColor;
+    position: fixed;
+    opacity: 0.7;
+    visibility: hidden;
+}

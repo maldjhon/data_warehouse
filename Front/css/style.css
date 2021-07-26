@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.textWhite {
+  font-family: "Open Sans", sans-serif;
+  color: #FFFFFF;
+}
+
+.formatButton, .containerLogin .login, .containerLogin .inputPassword, .containerLogin .inputUser {
+  height: 41px;
+  border: solid;
+  border-width: 1px;
+  outline: none;
+}
+
+header {
+  background-color: #1D72C2;
+  display: flex;
+  justify-content: space-between;
+}
+header .containerHeaderLeft {
+  display: flex;
+  margin: 12px 0px 12px 30px;
+}
+header .containerHeaderLeft .logoHeader {
+  height: 50px;
+}
+
+.containerLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+  margin: 75px auto;
+  border-radius: 10px;
+  border-color: #1D72C2;
+  border: solid;
+  border-width: 1px;
+}
+.containerLogin h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+.containerLogin .inputUser {
+  width: 300px;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  margin: 45px 0px 0px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+.containerLogin .inputPassword {
+  width: 300px;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  margin: 30px 0px 0px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+.containerLogin .login {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  margin: 45px 0px 0px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+.containerLogin .error {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  color: #DE0028;
+}
+.containerLogin .error.code {
+  margin: 15px 0px;
+}
+
+/*# sourceMappingURL=style.css.map */

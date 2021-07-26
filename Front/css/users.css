@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.textWhite, header .containerHeaderRight .linkHeader {
+  font-family: "Open Sans", sans-serif;
+  color: #FFFFFF;
+}
+
+.formatButton, .containerTitle .containerButtons .buttonAddUser, .containerLoginEdit .containerButtonsRegister .register, .containerLoginEdit .ContainersInputs .inputs, .containerLogin .containerButtonsRegister .register, .containerLogin .ContainersInputs .inputs {
+  height: 41px;
+  border: solid;
+  border-width: 1px;
+  outline: none;
+}
+
+header {
+  background-color: #1D72C2;
+  display: flex;
+  justify-content: space-between;
+}
+header .containerHeaderLeft {
+  display: flex;
+  margin: 12px 0px 12px 30px;
+}
+header .containerHeaderLeft .logoHeader {
+  height: 50px;
+}
+header .containerHeaderRight {
+  display: flex;
+  align-items: center;
+  margin: 23.6px 30px 22.8px 0px;
+}
+header .containerHeaderRight .linkHeader {
+  opacity: 0.7;
+  text-decoration: none;
+}
+header .containerHeaderRight .linkHeader.space {
+  margin: 0px 34.3px 0px 0px;
+}
+header .containerHeaderRight .linkHeader:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+#popupSaveUser {
+  display: none;
+}
+#popupSaveUser:checked ~ .containerLogin {
+  display: flex;
+}
+
+#popupSaveUserEdit {
+  display: none;
+}
+#popupSaveUserEdit:checked ~ .containerLoginEdit {
+  display: flex;
+}
+
+.containerLogin {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  margin: 75px auto;
+  border-radius: 10px;
+  border-color: #1D72C2;
+  border: solid;
+  border-width: 1px;
+  position: absolute;
+  margin: 25px auto;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #FFFFFF;
+}
+.containerLogin h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin: 15px 0px 0px;
+}
+.containerLogin .ContainersInputs {
+  margin: 20px 0px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 400px;
+}
+.containerLogin .ContainersInputs .labels {
+  width: 30%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+.containerLogin .ContainersInputs .inputs {
+  width: 70%;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+.containerLogin .containerButtonsRegister {
+  align-self: flex-end;
+  display: flex;
+}
+.containerLogin .containerButtonsRegister .register {
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  margin: 30px 25px 15px 0px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+.containerLogin .containerButtonsRegister .register.between {
+  margin: 30px 50px 0px 0px;
+}
+.containerLogin .error {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  color: #DE0028;
+  text-align: center;
+}
+.containerLogin .error.code {
+  margin: 10px 0px;
+}
+.containerLogin .error.message {
+  margin: 0px 20px 10px;
+}
+.containerLogin .correct {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  color: #429C41;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.containerLoginEdit {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  margin: 75px auto;
+  border-radius: 10px;
+  border-color: #1D72C2;
+  border: solid;
+  border-width: 1px;
+  position: absolute;
+  margin: 25px auto;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #FFFFFF;
+}
+.containerLoginEdit h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  margin: 15px 0px 0px;
+}
+.containerLoginEdit .ContainersInputs {
+  margin: 20px 0px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 400px;
+}
+.containerLoginEdit .ContainersInputs .labels {
+  width: 30%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+.containerLoginEdit .ContainersInputs .inputs {
+  width: 70%;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+.containerLoginEdit .containerButtonsRegister {
+  align-self: flex-end;
+  display: flex;
+}
+.containerLoginEdit .containerButtonsRegister .register {
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  margin: 30px 25px 15px 0px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+.containerLoginEdit .containerButtonsRegister .register.between {
+  margin: 30px 50px 0px 0px;
+}
+.containerLoginEdit .error {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  color: #DE0028;
+  text-align: center;
+}
+.containerLoginEdit .error.code {
+  margin: 10px 0px;
+}
+.containerLoginEdit .error.message {
+  margin: 0px 20px 10px;
+}
+.containerLoginEdit .correct {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  color: #429C41;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.containerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 39.6px 28px 0px 29.4px;
+}
+.containerTitle h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+}
+.containerTitle .containerButtons .buttonAddUser {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.containerSelectionUsers {
+  display: flex;
+  justify-content: space-between;
+  margin: 73px 28px 4.5px;
+}
+.containerSelectionUsers #countSelection {
+  display: none;
+  height: 24px;
+  background-color: rgba(6, 131, 249, 0.2);
+  font-family: "Open Sans", sans-serif;
+  color: #0683F9;
+  padding: 3px 8px;
+  font-size: 13px;
+}
+
+.containerUsersDiv {
+  display: flex;
+  flex-direction: column;
+  border: solid #CCCCCC;
+  border-width: 1px;
+  margin: 0px 28px 0px;
+}
+.containerUsersDiv .validationInput {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #DE0028;
+}
+.containerUsersDiv .headerContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  border-bottom: solid #CCCCCC;
+  border-width: 1px;
+}
+.containerUsersDiv .headerContainer .ocupation {
+  width: 20%;
+}
+.containerUsersDiv .headerContainer .ocupation.titles {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  color: #000000;
+}
+.containerUsersDiv .usersData {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+}
+.containerUsersDiv .usersData .ocupation {
+  width: 20%;
+  overflow: auto;
+}
+.containerUsersDiv .usersData .ocupation::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 5px;
+}
+.containerUsersDiv .usersData .ocupation::-webkit-scrollbar-thumb {
+  border: 3px solid #CCCCCC;
+  border-radius: 10px;
+}
+.containerUsersDiv .usersData .ocupation.titles {
+  font-family: "Open Sans", sans-serif;
+  color: #000000;
+  text-align: center;
+}
+.containerUsersDiv .usersData .ocupation.phone {
+  text-align: center;
+}
+.containerUsersDiv .usersData .ocupation.actions {
+  font-family: "Open Sans", sans-serif;
+  color: #0683F9;
+  cursor: pointer;
+  text-align: center;
+}
+
+.modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  position: fixed;
+  opacity: 0.7;
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=users.css.map */

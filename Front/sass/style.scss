@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import "./variables.scss";
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.textWhite{
+    font-family: 'Open Sans', sans-serif;
+    color: $whiteColor;
+}
+
+.formatButton{
+    height: 41px;
+    border: solid;
+    border-width: 1px;
+    outline: none;
+}
+
+header{
+    background-color: $backgroundHeader;
+    display: flex;
+    justify-content: space-between;
+    .containerHeaderLeft{
+        display: flex;
+        margin: 12px 0px 12px 30px;
+        .logoHeader{
+            height: 50px;
+        }
+    }
+}
+
+.containerLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    margin: 75px auto;
+    border-radius: 10px;
+    border-color: $backgroundHeader;
+    border: solid;
+    border-width: 1px;
+    h1{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+    }
+    .inputUser{
+        @extend .formatButton;
+        width: 300px;
+        border-color: $borderInput;
+        border-radius: 3.5px;
+        margin: 45px 0px 0px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+    }
+    .inputPassword{
+        @extend .formatButton;
+        width: 300px;
+        border-color: $borderInput;
+        border-radius: 3.5px;
+        margin: 30px 0px 0px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+    }
+    .login{
+        @extend .formatButton;
+        width: 172px;
+        border-color: $backgroundHeader;
+        background-color: $backgroundHeader;
+        color: $whiteColor;
+        border-radius: 2px;
+        margin: 45px 0px 0px;
+        cursor: pointer;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+    }
+    .error{
+        display: none;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+        color: $redColor;
+        &.code{
+            margin: 15px 0px
+        }
+    }
+}

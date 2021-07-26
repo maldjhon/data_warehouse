@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/organizations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="shortcut icon" href="../assets/Logo.svg">
+    <title>Organizations</title>
+</head>
+<body>
+    <header>
+        <div class="containerHeaderLeft">
+            <img src="../assets/Logo.svg" class="logoHeader" alt="logoHeader">
+        </div>
+        <div class="containerHeaderRight">
+            <a href="./customers.html" class="linkHeader space">Contactos</a>
+            <a href="./organizations.html" class="linkHeader space">Compañías</a>
+            <a href="./regions.html" class="linkHeader space">Región / Ciudad</a>
+        </div>
+    </header>
+    <input type="checkbox" name="popupSaveCompany" id="popupSaveCompany">
+    <input type="checkbox" name="popupEditCompany" id="popupEditCompany">
+    <div class="containerNewRecord">
+        <div class="headerCompany">
+            <h1>Nueva Compañía</h1>
+            <div class="close">
+                <label for="checkClose" class="labelClose">
+                    <i class="fas fa-times"></i>
+                </label>
+                <input type="checkbox" name="checkClose" id="checkClose" class="inputClose">
+            </div>
+        </div>
+        <div class="inputsName">
+            <div class="avatar">
+                <div class="containerAvatar">
+                    <div class="foto">
+                        <img src="../assets/avatar.PNG" alt="avatar">
+                    </div>
+                    <div class="camara">
+                        <div class="containerIcon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="containerInputName">
+                <label for="inputName" class="labelName">Nombre</label>
+                <input type="text" class="inputName" id="inputName">
+                <span class="validationInput" id="spanName"></span>
+            </div>
+            <div class="containerInputName">
+                <label for="inputEmail" class="labelName">Email</label>
+                <input type="email" class="inputName" id="inputEmail">
+                <span class="validationInput" id="spanEmail"></span>
+            </div>
+            <div class="containerInputName">
+                <label for="inputPhone" class="labelName">Teléfono</label>
+                <input type="tel" class="inputName" id="inputPhone">
+                <span class="validationInput" id="spanPhone"></span>
+            </div>
+            <div class="containerInputName">
+                <label for="inputAddress" class="labelName">Dirección</label>
+                <input type="text" class="inputName" id="inputAddress">
+                <span class="validationInput" id="spanAddress"></span>
+            </div>             
+        </div>
+        <div class="containerRegion">
+            <div class="containerInputName">
+                <label for="regionsName" class="labelName">Región</label>
+                <select name="regions" class="inputName" id="regionsName">
+                    <option value="na" id="defaultRegion" hidden>Seleccionar región</option>
+                </select>
+                <span class="validationInput" id="spanRegions"></span>
+            </div>
+            <div class="containerInputName">
+                <label for="countryName" class="labelName">País</label>
+                <select name="countries" class="inputName" id="countryName" disabled>
+                    <option value="na" id="defaultCountry" hidden>Seleccionar país</option>
+                </select>
+                <span class="validationInput" id="spanCountries"></span>
+            </div>
+            <div class="containerInputName">
+                <label for="cityName" class="labelName">Ciudad</label>
+                <select name="countries" class="inputName" id="cityName" disabled>
+                    <option value="na" id="defaultCity" hidden>Seleccionar ciudad</option>
+                </select>
+                <span class="validationInput" id="spanCities"></span>
+            </div>
+        </div>
+        <div class="containerButtonSave">
+            <button class="saveCompany" id="saveCompany">Guardar Compañía</button>
+        </div>
+    </div>
+    <div class="containerEditRecord">
+        <div class="headerCompany">
+            <h2>Nueva Compañía</h2>
+            <div class="close">
+                <label for="checkCloseEdit" class="labelClose">
+                    <i class="fas fa-times"></i>
+                </label>
+                <input type="checkbox" name="checkCloseEdit" id="checkCloseEdit" class="inputClose">
+            </div>
+        </div>
+        <div class="inputsName">
+            <div class="avatar">
+                <div class="containerAvatar">
+                    <div class="foto">
+                        <img src="../assets/avatar.PNG" alt="avatar">
+                    </div>
+                    <div class="camara">
+                        <div class="containerIcon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="containerInputName">
+                <label for="inputNameEdit" class="labelName">Nombre</label>
+                <input type="text" class="inputName" id="inputNameEdit">
+                <span class="validationInput" id="spanNameEdit"></span>
+            </div>
+            <div class="containerInputName">
+                <label for="inputEmailEdit" class="labelName">Email</label>
+                <input type="email" class="inputName" id="inputEmailEdit">
+                <span class="validationInput" id="spanEmailEdit"></span>
+            </div>
+            <div class="containerInputName">
+                <label for="inputPhoneEdit" class="labelName">Teléfono</label>
+                <input type="tel" class="inputName" id="inputPhoneEdit">
+                <span class="validationInput" id="spanPhoneEdit"></span>
+            </div>
+            <div class="containerInputName">
+                <label for="inputAddressEdit" class="labelName">Dirección</label>
+                <input type="text" class="inputName" id="inputAddressEdit">
+                <span class="validationInput" id="spanAddressEdit"></span>
+            </div>             
+        </div>
+        <div class="containerRegion">
+            <div class="containerInputName">
+                <label for="regionsNameEdit" class="labelName">Región</label>
+                <select name="regions" class="inputName" id="regionsNameEdit">
+                    <option value="na" id="previousValueRegion" hidden>Seleccionar región</option>
+                </select>
+                <span class="validationInput" id="spanRegionsEdit"></span>
+            </div>
+            <div class="containerInputName">
+                <label for="countryNameEdit" class="labelName">País</label>
+                <select name="countries" class="inputName" id="countryNameEdit" disabled>
+                    <option value="na" id="previousValueContry" hidden>Seleccionar país</option>
+                </select>
+                <span class="validationInput" id="spanCountriesEdit"></span>
+            </div>
+            <div class="containerInputName">
+                <label for="cityNameEdit" class="labelName">Ciudad</label>
+                <select name="countries" class="inputName" id="cityNameEdit" disabled>
+                    <option value="na" id="previousValueCity" hidden>Seleccionar ciudad</option>
+                </select>
+                <span class="validationInput" id="spanCitiesEdit"></span>
+            </div>
+        </div>
+        <div class="containerButtonSave">
+            <button class="saveCompany" id="saveEditCompany">Guardar Compañía</button>
+        </div>
+    </div>
+    <section class="secTitle">
+        <div class="containerTitle">
+            <h2>Compañías</h2>
+            <div class="containerButtons">
+                <button class="buttonAddCompany" id="buttonAddCompany">Agregar Compañía</button>
+            </div>
+        </div>
+    </section>
+    <div class="containerSelectionCompanies">
+        <span id="countSelection"></span>
+    </div>
+    <div class="containerCompaniesDiv" id="companiesData">
+        <div class="headerContainer">
+            <input type="checkbox" name="allCheck" class="allCheck ocupation" id="allCheck">
+            <span class="titles ocupation">Nombre</span>
+            <span class="titles ocupation">Email</span>
+            <span class="titles ocupation">Teléfono</span>
+            <span class="titles ocupation">Región</span>
+            <span class="titles ocupation">País</span>
+            <span class="titles ocupation">Ciudad</span>
+            <span class="titles ocupation">Dirección</span>
+            <span class="titles ocupation">Acciones</span>
+        </div>
+        <div class="validationInput" id="containerSpanCompanies">
+            <span id="spanCompanies"></span>
+        </div>
+    </div>
+    <div class="modal"></div>
+    <script src="../scripts/organizations.js"></script>
+</body>
+</html>

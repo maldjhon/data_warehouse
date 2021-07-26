@@ -1,0 +1,1189 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import "./variables.scss";
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.textWhite{
+    font-family: 'Open Sans', sans-serif;
+    color: $whiteColor;
+}
+
+.formatButton{
+    height: 41px;
+    border: solid;
+    border-width: 1px;
+    outline: none;
+}
+
+header{
+    background-color: $backgroundHeader;
+    display: flex;
+    justify-content: space-between;
+    .containerHeaderLeft{
+        display: flex;
+        margin: 12px 0px 12px 30px;
+        .logoHeader{
+            height: 50px;
+        }
+    }
+    .containerHeaderRight{
+        display: flex;
+        align-items: center;
+        margin: 23.6px 30px 22.8px 0px;
+        .linkHeader{
+            @extend .textWhite;
+            opacity: 0.7;
+            text-decoration: none;
+            &.space{
+                margin: 0px 34.3px 0px 0px;
+            }
+            &:hover{
+                opacity: 1;
+                text-decoration: underline;
+            }
+        }
+        .signOut{
+            width: 30px;
+            height: 30px;
+            border: solid;
+            border-width: 1px;
+            outline: none;
+            border-color: $whiteColor;
+            background-color: $backgroundHeader;
+            color: $whiteColor;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+    }
+}
+
+#searchSpecification{
+    display: none;
+    &:checked{
+        ~ .containerSearchSpecification{
+            display: flex;
+        }
+    }
+}
+
+#ascDecCont{
+    display: none;
+    &:checked{
+        ~ .asc{
+            display: none;
+        }
+        ~ .desc{
+            display: block;
+        }
+    }
+}
+
+#ascDecCoun{
+    display: none;
+    &:checked{
+        ~ .asc{
+            display: none;
+        }
+        ~ .desc{
+            display: block;
+        }
+    }
+}
+
+#ascDecCom{
+    display: none;
+    &:checked{
+        ~ .asc{
+            display: none;
+        }
+        ~ .desc{
+            display: block;
+        }
+    }
+}
+
+#ascDecOcu{
+    display: none;
+    &:checked{
+        ~ .asc{
+            display: none;
+        }
+        ~ .desc{
+            display: block;
+        }
+    }
+}
+
+#ascDecChan{
+    display: none;
+    &:checked{
+        ~ .asc{
+            display: none;
+        }
+        ~ .desc{
+            display: block;
+        }
+    }
+}
+
+#ascDecInt{
+    display: none;
+    &:checked{
+        ~ .asc{
+            display: none;
+        }
+        ~ .desc{
+            display: block;
+        }
+    }
+}
+
+#ascDecAct{
+    display: none;
+    &:checked{
+        ~ .asc{
+            display: none;
+        }
+        ~ .desc{
+            display: block;
+        }
+    }
+}
+
+#popupSaveContact{
+    display: none;
+    &:checked{
+        ~ .containerNewRecord{
+            display: flex;
+        }
+    }
+}
+
+#popupEditContact{
+    display: none;
+    &:checked{
+        ~ .containerEditRecord{
+            display: flex;
+        }
+    }
+}
+
+#popupDeleteContact{
+    display: none;
+    &:checked{
+        ~ .deleteModal{
+            display: flex;
+        }
+    }
+}
+
+.containerNewRecord{
+    display: none;
+    flex-direction: column;
+    background-color: $backgroundHeader;
+    border: solid;
+    border-width: 1px;
+    border-color: $backgroundHeader;
+    border-radius: 3px;
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    margin: 26px 76px 0px;
+    z-index: 1;
+    .headerCompany{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px;
+        h1{
+            color: $whiteColor;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 17px;
+        }
+        .close{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            right: 10px;
+            .labelClose{
+                position: absolute;
+                i{
+                    cursor: pointer;
+                    color: $whiteColor;
+                }
+            }
+            .inputClose{
+                position: absolute;
+                display: none;
+            }
+        }
+    }
+    .inputsName{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $whiteColor;
+        align-items: center;
+        margin: 0px 21.5px -45px;
+        border: solid;
+        border-radius: 6.5px;
+        border-width: 3px;
+        border-color: $baseColor;
+        padding: 20px;
+        z-index: 1;
+        .avatar{
+            width: 85px;
+            height: 85px;
+            position: relative;
+            .containerAvatar{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                border: solid;
+                width: 100%;
+                height: 100%;
+                border-color: $baseColor;
+                border-width: 2px;
+                background: $backgroundAvatar;
+                .camara{
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    background-color: $whiteColor;
+                    margin: 0px 3px 5px 0px;
+                    .containerIcon{
+                        width: 100%;
+                        height: 100%;
+                        background: $baseColor;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        i{
+                            color: $whiteColor;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        .containerInputName{
+            display: flex;
+            flex-direction: column;
+            .labelName{
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                &::after{
+                    content: '*';
+                    color: $redColor;
+                }
+            }
+            .inputName{
+                height: 35.5px;
+                @extend .formatButton;
+                border-color: $borderInput;
+                border-radius: 3.5px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                &#inputCompany{
+                    width: 230px;
+                }
+            }
+            .validationInput{
+                display: none;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                font-style: italic;
+                color: $redColor;
+                &#spanCompany{
+                    width: 230px;
+                }
+            }
+        }
+    }
+    .containerRegion{
+        display: flex;
+        background-color: $whiteColor;
+        padding: 60px 33px 15px 50px;
+        .containerInputName{
+            display: flex;
+            flex-direction: column;
+            margin: 0px 16px 0px 0px;
+            .labelName{
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+            }
+            .inputName{
+                height: 35.5px;
+                @extend .formatButton;
+                border-color: $borderInput;
+                border-radius: 3.5px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                width: 190px;
+                &#countryName{
+                    background-color: $disabled;
+                }
+                &#cityName{
+                    background-color: $disabled;
+                }
+            }
+            .validationInput{
+                display: none;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                font-style: italic;
+                color: $redColor;
+                width: 190px;
+            }
+        }
+    }
+    .containerChannels{
+        display: flex;
+        background-color: $whiteColor;
+        padding: 28px 33px 15px 50px;
+        .containerInitChannels{
+            display: flex;
+            .containerInputName{
+                display: flex;
+                flex-direction: column;
+                margin: 0px 16px 0px 0px;
+                .labelName{
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                }
+                .inputName{
+                    height: 35.5px;
+                    @extend .formatButton;
+                    border-color: $borderInput;
+                    border-radius: 3.5px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    width: 190px;
+                }
+                .validationInput{
+                    display: none;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    font-style: italic;
+                    color: $redColor;
+                }
+                & #inputAccountUser{
+                    background: $disabled;
+                }
+                & #preference{
+                    background: $disabled;
+                }
+            }
+            .saveChannel{
+                @extend .formatButton;
+                width: 172px;
+                border-color: $disabled;
+                background-color: $whiteColor;
+                color: $disabled;
+                border-radius: 2px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 15px;
+                align-self: flex-end;
+                height: 35.5px;
+                i{
+                    margin: 0px 8px 0px 0px;
+                }
+            }
+        }
+    }
+    #containerOtherChannels{
+        display: flex;
+        flex-direction: column;
+        background-color: $whiteColor;
+        padding: 0px 33px 15px 50px;
+        .otherChannels{
+            display: flex;
+            padding: 0px 0px 15px 0px;
+            .containerInputName{
+                display: flex;
+                flex-direction: column;
+                margin: 0px 16px 0px 0px;
+                .labelName{
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                }
+                .inputName{
+                    height: 35.5px;
+                    @extend .formatButton;
+                    border-color: $borderInput;
+                    border-radius: 3.5px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    width: 190px;
+                    background-color: $disabled;
+                }
+                .validationInput{
+                    display: none;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    font-style: italic;
+                    color: $redColor;
+                }
+            }
+            .saveChannel{
+                @extend .formatButton;
+                width: 172px;
+                border-color: $disabled;
+                background-color: $whiteColor;
+                color: $disabled;
+                border-radius: 2px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 15px;
+                align-self: flex-end;
+                height: 35.5px;
+                i{
+                    margin: 0px 8px 0px 0px;
+                }
+            }   
+        }
+    }
+    .containerButtonSave{
+        display: flex;
+        justify-content: flex-end;
+        background-color: $whiteColor;
+        padding: 0px 15px 15px;
+        .saveContact{
+            @extend .formatButton;
+            width: 172px;
+            border-color: $backgroundHeader;
+            background-color: $backgroundHeader;
+            color: $whiteColor;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+        }
+    }
+}
+
+.containerEditRecord{
+    display: none;
+    flex-direction: column;
+    background-color: $backgroundHeader;
+    border: solid;
+    border-width: 1px;
+    border-color: $backgroundHeader;
+    border-radius: 3px;
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    margin: 26px 76px 0px;
+    z-index: 1;
+    .headerCompany{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px;
+        h1{
+            color: $whiteColor;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 17px;
+        }
+        .close{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            right: 10px;
+            .labelClose{
+                position: absolute;
+                i{
+                    cursor: pointer;
+                    color: $whiteColor;
+                }
+            }
+            .inputClose{
+                position: absolute;
+                display: none;
+            }
+        }
+    }
+    .inputsName{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $whiteColor;
+        align-items: center;
+        margin: 0px 21.5px -45px;
+        border: solid;
+        border-radius: 6.5px;
+        border-width: 3px;
+        border-color: $baseColor;
+        padding: 20px;
+        z-index: 1;
+        .avatar{
+            width: 85px;
+            height: 85px;
+            position: relative;
+            .containerAvatar{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                border: solid;
+                width: 100%;
+                height: 100%;
+                border-color: $baseColor;
+                border-width: 2px;
+                background: $backgroundAvatar;
+                .camara{
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    background-color: $whiteColor;
+                    margin: 0px 3px 5px 0px;
+                    .containerIcon{
+                        width: 100%;
+                        height: 100%;
+                        background: $baseColor;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        i{
+                            color: $whiteColor;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        .containerInputName{
+            display: flex;
+            flex-direction: column;
+            .labelName{
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                &::after{
+                    content: '*';
+                    color: $redColor;
+                }
+            }
+            .inputName{
+                height: 35.5px;
+                @extend .formatButton;
+                border-color: $borderInput;
+                border-radius: 3.5px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                &#inputCompany{
+                    width: 230px;
+                }
+            }
+            .validationInput{
+                display: none;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                font-style: italic;
+                color: $redColor;
+                &#spanCompany{
+                    width: 230px;
+                }
+            }
+        }
+    }
+    .containerRegion{
+        display: flex;
+        background-color: $whiteColor;
+        padding: 60px 33px 15px 50px;
+        .containerInputName{
+            display: flex;
+            flex-direction: column;
+            margin: 0px 16px 0px 0px;
+            .labelName{
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+            }
+            .inputName{
+                height: 35.5px;
+                @extend .formatButton;
+                border-color: $borderInput;
+                border-radius: 3.5px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                width: 190px;
+                &#countryNameEdit{
+                    background-color: $disabled;
+                }
+                &#cityNameEdit{
+                    background-color: $disabled;
+                }
+            }
+            .validationInput{
+                display: none;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                font-style: italic;
+                color: $redColor;
+                width: 190px;
+            }
+        }
+    }
+    .containerChannels{
+        display: flex;
+        background-color: $whiteColor;
+        padding: 28px 33px 15px 50px;
+        .containerInitChannels{
+            display: flex;
+            .containerInputName{
+                display: flex;
+                flex-direction: column;
+                margin: 0px 16px 0px 0px;
+                .labelName{
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                }
+                .inputName{
+                    height: 35.5px;
+                    @extend .formatButton;
+                    border-color: $borderInput;
+                    border-radius: 3.5px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    width: 190px;
+                }
+                .validationInput{
+                    display: none;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    font-style: italic;
+                    color: $redColor;
+                }
+                & #inputAccountUserEdit{
+                    background: $disabled;
+                }
+                & #preferenceEdit{
+                    background: $disabled;
+                }
+            }
+            .saveChannel{
+                @extend .formatButton;
+                width: 172px;
+                border-color: $disabled;
+                background-color: $whiteColor;
+                color: $disabled;
+                border-radius: 2px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 15px;
+                align-self: flex-end;
+                height: 35.5px;
+                i{
+                    margin: 0px 8px 0px 0px;
+                }
+            }
+        }
+    }
+    #containerOtherChannelsEdit{
+        display: flex;
+        flex-direction: column;
+        background-color: $whiteColor;
+        padding: 0px 33px 15px 50px;
+        .otherChannels{
+            display: flex;
+            padding: 0px 0px 15px 0px;
+            .containerInputName{
+                display: flex;
+                flex-direction: column;
+                margin: 0px 16px 0px 0px;
+                .labelName{
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                }
+                .inputName{
+                    height: 35.5px;
+                    @extend .formatButton;
+                    border-color: $borderInput;
+                    background-color: $disabled;
+                    border-radius: 3.5px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    width: 190px;
+                }
+                .inputNameEdit{
+                    height: 35.5px;
+                    @extend .formatButton;
+                    border-color: $borderInput;
+                    border-radius: 3.5px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    width: 190px;
+                }
+                .validationInput{
+                    display: none;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size: 14px;
+                    font-style: italic;
+                    color: $redColor;
+                }
+            }
+            .saveChannel{
+                @extend .formatButton;
+                width: 172px;
+                border-color: $disabled;
+                background-color: $whiteColor;
+                color: $disabled;
+                border-radius: 2px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 15px;
+                align-self: flex-end;
+                height: 35.5px;
+                i{
+                    margin: 0px 8px 0px 0px;
+                }
+            }
+            .channel{
+                @extend .formatButton;
+                width: 172px;
+                border-color: $backgroundHeader;
+                background-color: $whiteColor;
+                color: $backgroundHeader;
+                border-radius: 2px;
+                cursor: pointer;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 15px;
+                align-self: flex-end;
+                height: 35.5px;
+                margin: 0px 16px 0px 0px;
+                i{
+                    margin: 0px 6px 0px 0px;
+                }
+            }   
+        }
+    }
+    .containerButtonSave{
+        display: flex;
+        justify-content: flex-end;
+        background-color: $whiteColor;
+        padding: 0px 15px 15px;
+        .saveContact{
+            @extend .formatButton;
+            width: 172px;
+            border-color: $backgroundHeader;
+            background-color: $backgroundHeader;
+            color: $whiteColor;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+        }
+    }
+}
+
+.containerTitle{
+    margin: 39.6px 28px 0px 29.4px;
+    h2{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        margin: 0px 0px 20.3px;
+    }
+    .containerButtons{
+        display: flex;
+        justify-content: space-between;
+        .containerTitleLeft{
+            display: flex;
+            .containerSearch{
+                position: relative;
+                margin: 0px 9px 0px 0px;
+                .inputSearchContact{
+                    @extend .formatButton;
+                    width: 502px;
+                    border-color: $borderInput;
+                    border-radius: 3.5px;
+                    padding: 0px 35px;
+                }
+                .icon{
+                    position: absolute;
+                    right: 17px;
+                    top: 13px;
+                    cursor: pointer;
+                }
+            }
+            .buttonSearchContact{
+                @extend .formatButton;
+                width: 41px;
+                border-color: $borderInput;
+                background-color: $whiteColor;
+                border-radius: 3.5px;
+                cursor: pointer;
+                i{
+                    font-size: 20px;
+                    color: $backgroundHeader;
+                }
+            }
+            .containerSearchSpecification{
+                display: none;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 503px;
+                margin: 45.5px auto;
+                border-radius: 10px;
+                border: solid $borderInput;
+                border-width: 1px;
+                position: absolute;
+                background-color: $whiteColor;
+                .ContainersInputs{
+                    margin: 20px 0px 0px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    width: 100%;
+                    padding: 0px 17.2px;
+                    .labels{
+                        width: 30%;
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 13px;
+                    }
+                    .inputs{
+                        @extend .formatButton;
+                        border-color: $borderInput;
+                        font-family: 'Open Sans', sans-serif;
+                        font-size: 13px;
+                        &.borders{
+                            width: 70%;
+                            border-top-color: $whiteColor;
+                            border-left-color: $whiteColor;
+                            border-right-color: $whiteColor;
+                            border-radius: 0px;
+                        }
+                        &.widths{
+                            width: 190px;
+                            border-radius: 3.5px;
+                        }
+                    }
+                    &.endInterest{
+                        margin: 20px 0px 20px;
+                    }
+                }
+            }
+        }
+        .containerTitleRight{
+            display: flex;
+            .buttonLoadContacts{
+                @extend .formatButton;
+                width: 41px;
+                border-color: $backgroundHeader;
+                background-color: $whiteColor;
+                border-radius: 3.5px;
+                margin: 0px 9px 0px 0px;
+                cursor: pointer;
+                i{
+                    font-size: 20px;
+                    color: $backgroundHeader;
+                }
+            }
+            .containerExport{
+                margin: 0px 9px 0px 0px;
+                .buttonDownloadContacts{
+                    @extend .formatButton;
+                    width: 172px;
+                    border-color: $backgroundHeader;
+                    background-color: $whiteColor;
+                    color: $backgroundHeader;
+                    border-radius: 1.5px;
+                    cursor: pointer;
+                }
+            }
+            .buttonAddContact{
+                @extend .formatButton;
+                width: 172px;
+                border-color: $backgroundHeader;
+                background-color: $backgroundHeader;
+                color: $whiteColor;
+                border-radius: 2px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.containerSelectionContacts{
+    display: flex;
+    justify-content: space-between;
+    margin: 73px 28px 4.5px;
+    #countSelection{
+        display: none;
+        height: 24px;
+        background-color: $hoverSelected;
+        font-family: 'Open Sans', sans-serif;
+        color: $baseColor;
+        padding: 3px 8px;
+        font-size: 13px;
+    }
+    #deleteSelection{
+        display: none;
+        color: $backgroundHeader;
+        align-items: center;
+        cursor: pointer;
+        font-family: "Open Sans", sans-serif;
+        .delete{
+            margin: 0px 0px 0px 10px;
+        }
+    }
+}
+
+.containerContactsDiv{
+    color: $borderInput;
+    border: solid;
+    border-width: 1px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 28px;
+    .headerContainer{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        border-bottom: solid $borderInput;
+        border-width: 1px;
+        .containerCheck{
+            width: 4%;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .containerContactsName{
+            width: 18.5%;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span{
+                font-family: 'Open Sans', sans-serif;
+                color: $blackColor;
+            }
+            i{
+                color: $blackColor;
+                cursor: pointer;
+                margin-left: 10px;
+                &.desc{
+                    display: none;
+                }
+            }
+        }
+        .containerContacts{
+            width: 13.5%;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span{
+                font-family: 'Open Sans', sans-serif;
+                color: $blackColor;
+            }
+            i{
+                color: $blackColor;
+                cursor: pointer;
+                margin-left: 10px;
+                &.desc{
+                    display: none;
+                }
+            }
+        }
+        .containerContactsAct{
+            width: 6%;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span{
+                font-family: 'Open Sans', sans-serif;
+                color: $blackColor;
+            }
+            i{
+                color: $blackColor;
+                cursor: pointer;
+                margin-left: 10px;
+                &.desc{
+                    display: none;
+                }
+            }
+        }
+    }
+    .validationInput{
+        display: none;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        font-style: italic;
+        color: $redColor;
+    }
+    .contactsData{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-evenly;
+        .check{
+            width: 4%;
+        }
+        .inputNameContact{
+            width: 18.5%;
+            height: 56px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .titles{
+                font-family: 'Open Sans', sans-serif;
+                color: $blackColor;
+            }
+            .subTitles{
+                font-family: 'Open Sans', sans-serif;
+                color: $subtitlesColor;
+                font-size: 13px;
+            }
+        }
+        .inputNameRegion{
+            width: 13.5%;
+            height: 56px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .titles{
+                font-family: 'Open Sans', sans-serif;
+                color: $blackColor;
+            }
+            .subTitles{
+                font-family: 'Open Sans', sans-serif;
+                color: $subtitlesColor;
+                font-size: 13px;
+            }
+        }
+        .ocupation{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 13.5%;
+            height: 56px;
+            font-family: 'Open Sans', sans-serif;
+            color: $blackColor;
+        }
+        .actions{
+            width: 6%;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .wait{
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: $borderInput;
+                &::after{
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    display: block;
+                    background-color: $borderInput;
+                    margin: -10px 0px 0px 30px;
+                }
+                &::before{
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    display: block;
+                    background-color: $borderInput;
+                    margin: 0px 0px 0px 15px;
+                }
+            }
+            .deleteEdit{
+                display: none;
+                width: 100%;
+                justify-content: space-around;
+                .edit{
+                    cursor: pointer;
+                }
+                .delete{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.deleteModal{
+    position: fixed;
+    width: 339px;
+    height: 339px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $whiteColor;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;    
+    z-index: 1;
+    border-radius: 4px;
+    img{
+        width: 117px;
+        height: 130px;
+        margin: 16px 0px 0px 0px;
+    }
+    span{
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+        margin: 43px 0px 0px 0px;
+    }
+    .containerButtons{
+        margin: 43px 0px 24px 0px;
+        .cancelDelete{
+            @extend .formatButton;
+            width: 130px;
+            border-color: $backgroundHeader;
+            background-color: $whiteColor;
+            color: $baseColor;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+            align-self: flex-end;
+            height: 41px;
+            margin: 0px 16px 0px 0px;
+        }
+        .acceptDelete{
+            @extend .formatButton;
+            width: 130px;
+            border-color: $redColor;
+            background-color: $redColor;
+            color: $whiteColor;
+            border-radius: 2px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+            align-self: flex-end;
+            height: 41px;
+        }
+    }
+}
+
+.modal{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $blackColor;
+    position: fixed;
+    opacity: 0.7;
+    visibility: hidden;
+}

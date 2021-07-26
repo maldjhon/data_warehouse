@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/users.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="shortcut icon" href="../assets/Logo.svg">
+    <title>Users</title>
+</head>
+<body>
+    <header>
+        <div class="containerHeaderLeft">
+            <img src="../assets/Logo.svg" class="logoHeader" alt="logoHeader">
+        </div>
+        <div class="containerHeaderRight">
+            <a href="./customersAdmin.html" class="linkHeader space">Contactos</a>
+            <a href="./organizationsAdmin.html" class="linkHeader space">Compañías</a>
+            <a href="./users.html" class="linkHeader space">Usuarios</a>
+            <a href="./regionsAdmin.html" class="linkHeader space">Región / Ciudad</a>
+        </div>
+    </header>
+    <input type="checkbox" name="popupSaveUser" id="popupSaveUser">
+    <input type="checkbox" name="popupSaveUserEdit" id="popupSaveUserEdit">
+    <div class="containerLogin">
+        <h1>Crear Usuario</h1>
+        <div class="ContainersInputs">
+            <label for="firstName" class="labels">Nombre:</label>
+            <input type="text" name="firstName" id="firstName" class="inputs">
+        </div>
+        <div class="ContainersInputs">
+            <label for="lastName" class="labels">Apellido:</label>
+            <input type="text" name="lastName" id="lastName" class="inputs">
+        </div>
+        <div class="ContainersInputs">
+            <label for="email" class="labels">Email:</label>
+            <input type="email" name="email" id="email" class="inputs">
+        </div>
+        <div class="ContainersInputs">
+            <label for="profile" class="labels">Perfil:</label>
+            <select name="profile" id="profile" class="inputs">
+                <option value="Admin">Admin</option>
+                <option value="Basico">Básico</option>
+            </select>
+        </div>
+        <div class="ContainersInputs">
+            <label for="password" class="labels">Contraseña:</label>
+            <input type="password" name="password" id="password" class="inputs" placeholder="****">
+        </div>
+        <div class="ContainersInputs">
+            <label for="repeatPassword" class="labels">Repetir Contraseña:</label>
+            <input type="password" name="repeatPassword" id="repeatPassword" class="inputs" placeholder="****">
+        </div>
+        <div class="containerButtonsRegister">
+            <button id="cancel" class="register">Cancelar</button>
+            <button id="register" class="register between">Crear</button>
+        </div>
+        <span class="code error" id="code"></span>
+        <span class="message error" id="message"></span>
+        <span class="correct" id="correct"></span>
+    </div>
+    <div class="containerLoginEdit">
+        <h2>Editar Usuario</h2>
+        <div class="ContainersInputs">
+            <label for="firstNameEdit" class="labels">Nombre:</label>
+            <input type="text" name="firstName" id="firstNameEdit" class="inputs">
+        </div>
+        <div class="ContainersInputs">
+            <label for="lastNameEdit" class="labels">Apellido:</label>
+            <input type="text" name="lastName" id="lastNameEdit" class="inputs">
+        </div>
+        <div class="ContainersInputs">
+            <label for="emailEdit" class="labels">Email:</label>
+            <input type="email" name="email" id="emailEdit" class="inputs">
+        </div>
+        <div class="ContainersInputs">
+            <label for="profileEdit" class="labels">Perfil:</label>
+            <select name="profile" id="profileEdit" class="inputs">
+                <option value="Admin">Admin</option>
+                <option value="Basico">Básico</option>
+            </select>
+        </div>
+        <div class="ContainersInputs">
+            <label for="passwordEdit" class="labels">Contraseña:</label>
+            <input type="password" name="password" id="passwordEdit" class="inputs" placeholder="****">
+        </div>
+        <div class="ContainersInputs">
+            <label for="repeatPasswordEdit" class="labels">Repetir Contraseña:</label>
+            <input type="password" name="repeatPassword" id="repeatPasswordEdit" class="inputs" placeholder="****">
+        </div>
+        <div class="containerButtonsRegister">
+            <button id="cancelEdit" class="register">Cancelar</button>
+            <button id="registerEdit" class="register between">Modificar</button>
+        </div>
+        <span class="code error" id="codeEdit"></span>
+        <span class="message error" id="messageEdit"></span>
+        <span class="correct" id="correctEdit"></span>
+    </div>
+    <section class="secTitle">
+        <div class="containerTitle">
+            <h2>Usuarios</h2>
+            <div class="containerButtons">
+                <button class="buttonAddUser" id="buttonAddUser">Agregar Usuario</button>
+            </div>
+        </div>
+    </section>
+    <div class="containerSelectionUsers">
+        <span id="countSelection"></span>
+    </div>
+    <div class="containerUsersDiv" id="usersData">
+        <span class="validationInput" id="spanUsers"></span>
+        <div class="headerContainer">
+            <input type="checkbox" name="allCheck" class="allCheck ocupation" id="allCheck">
+            <span class="titles ocupation">Nombre</span>
+            <span class="titles ocupation">Email</span>
+            <span class="titles ocupation">Perfil</span>
+            <span class="titles ocupation">Acciones</span>
+        </div>
+    </div>
+    <div class="modal"></div>
+    <script src="../scripts/users.js"></script>
+</body>
+</html>

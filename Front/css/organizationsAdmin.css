@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.textWhite, header .containerHeaderRight .linkHeader {
+  font-family: "Open Sans", sans-serif;
+  color: #FFFFFF;
+}
+
+.formatButton, .containerTitle .containerButtons .buttonAddCompany, .containerEditRecord .containerButtonSave .saveCompany, .containerEditRecord .containerRegion .containerInputName .inputName, .containerEditRecord .inputsName .containerInputName .inputName, .containerNewRecord .containerButtonSave .saveCompany, .containerNewRecord .containerRegion .containerInputName .inputName, .containerNewRecord .inputsName .containerInputName .inputName {
+  height: 41px;
+  border: solid;
+  border-width: 1px;
+  outline: none;
+}
+
+header {
+  background-color: #1D72C2;
+  display: flex;
+  justify-content: space-between;
+}
+header .containerHeaderLeft {
+  display: flex;
+  margin: 12px 0px 12px 30px;
+}
+header .containerHeaderLeft .logoHeader {
+  height: 50px;
+}
+header .containerHeaderRight {
+  display: flex;
+  align-items: center;
+  margin: 23.6px 30px 22.8px 0px;
+}
+header .containerHeaderRight .linkHeader {
+  opacity: 0.7;
+  text-decoration: none;
+}
+header .containerHeaderRight .linkHeader.space {
+  margin: 0px 34.3px 0px 0px;
+}
+header .containerHeaderRight .linkHeader:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+header .containerHeaderRight .signOut {
+  width: 30px;
+  height: 30px;
+  border: solid;
+  border-width: 1px;
+  outline: none;
+  border-color: #FFFFFF;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#popupSaveCompany {
+  display: none;
+}
+#popupSaveCompany:checked ~ .containerNewRecord {
+  display: flex;
+}
+
+#popupEditCompany {
+  display: none;
+}
+#popupEditCompany:checked ~ .containerEditRecord {
+  display: flex;
+}
+
+.containerNewRecord {
+  display: none;
+  flex-direction: column;
+  background-color: #1D72C2;
+  border: solid;
+  border-width: 1px;
+  border-color: #1D72C2;
+  border-radius: 3px;
+  position: absolute;
+  margin: auto;
+  right: 0;
+  left: 0;
+  margin: 26px 76px 0px;
+  z-index: 1;
+}
+.containerNewRecord .headerCompany {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+.containerNewRecord .headerCompany h1 {
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerNewRecord .headerCompany .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 10px;
+}
+.containerNewRecord .headerCompany .close .labelClose {
+  position: absolute;
+}
+.containerNewRecord .headerCompany .close .labelClose i {
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.containerNewRecord .headerCompany .close .inputClose {
+  position: absolute;
+  display: none;
+}
+.containerNewRecord .inputsName {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #FFFFFF;
+  align-items: center;
+  margin: 0px 21.5px -45px;
+  border: solid;
+  border-radius: 6.5px;
+  border-width: 3px;
+  border-color: #0683F9;
+  padding: 20px;
+  z-index: 1;
+}
+.containerNewRecord .inputsName .avatar {
+  width: 85px;
+  height: 85px;
+  position: relative;
+}
+.containerNewRecord .inputsName .avatar .containerAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: solid;
+  width: 100%;
+  height: 100%;
+  border-color: #0683F9;
+  border-width: 2px;
+  background: rgba(0, 0, 0, 0.05);
+}
+.containerNewRecord .inputsName .avatar .containerAvatar .camara {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #FFFFFF;
+  margin: 0px 3px 5px 0px;
+}
+.containerNewRecord .inputsName .avatar .containerAvatar .camara .containerIcon {
+  width: 100%;
+  height: 100%;
+  background: #0683F9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerNewRecord .inputsName .avatar .containerAvatar .camara .containerIcon i {
+  color: #FFFFFF;
+  font-size: 12px;
+}
+.containerNewRecord .inputsName .containerInputName {
+  display: flex;
+  flex-direction: column;
+}
+.containerNewRecord .inputsName .containerInputName .labelName {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.containerNewRecord .inputsName .containerInputName .labelName::after {
+  content: "*";
+  color: #DE0028;
+}
+.containerNewRecord .inputsName .containerInputName .inputName {
+  height: 35.5px;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.containerNewRecord .inputsName .containerInputName .validationInput {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #DE0028;
+}
+.containerNewRecord .containerRegion {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #FFFFFF;
+  padding: 60px 33px 15px;
+}
+.containerNewRecord .containerRegion .containerInputName {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.containerNewRecord .containerRegion .containerInputName .labelName {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.containerNewRecord .containerRegion .containerInputName .inputName {
+  height: 35.5px;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.containerNewRecord .containerRegion .containerInputName .validationInput {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #DE0028;
+}
+.containerNewRecord .containerButtonSave {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #FFFFFF;
+  padding: 0px 15px 15px;
+}
+.containerNewRecord .containerButtonSave .saveCompany {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+.containerEditRecord {
+  display: none;
+  flex-direction: column;
+  background-color: #1D72C2;
+  border: solid;
+  border-width: 1px;
+  border-color: #1D72C2;
+  border-radius: 3px;
+  position: absolute;
+  margin: auto;
+  right: 0;
+  left: 0;
+  margin: 26px 76px 0px;
+  z-index: 1;
+}
+.containerEditRecord .headerCompany {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+.containerEditRecord .headerCompany h2 {
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerEditRecord .headerCompany .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 10px;
+}
+.containerEditRecord .headerCompany .close .labelClose {
+  position: absolute;
+}
+.containerEditRecord .headerCompany .close .labelClose i {
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.containerEditRecord .headerCompany .close .inputClose {
+  position: absolute;
+  display: none;
+}
+.containerEditRecord .inputsName {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #FFFFFF;
+  align-items: center;
+  margin: 0px 21.5px -45px;
+  border: solid;
+  border-radius: 6.5px;
+  border-width: 3px;
+  border-color: #0683F9;
+  padding: 20px;
+  z-index: 1;
+}
+.containerEditRecord .inputsName .avatar {
+  width: 85px;
+  height: 85px;
+  position: relative;
+}
+.containerEditRecord .inputsName .avatar .containerAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: solid;
+  width: 100%;
+  height: 100%;
+  border-color: #0683F9;
+  border-width: 2px;
+  background: rgba(0, 0, 0, 0.05);
+}
+.containerEditRecord .inputsName .avatar .containerAvatar .camara {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #FFFFFF;
+  margin: 0px 3px 5px 0px;
+}
+.containerEditRecord .inputsName .avatar .containerAvatar .camara .containerIcon {
+  width: 100%;
+  height: 100%;
+  background: #0683F9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerEditRecord .inputsName .avatar .containerAvatar .camara .containerIcon i {
+  color: #FFFFFF;
+  font-size: 12px;
+}
+.containerEditRecord .inputsName .containerInputName {
+  display: flex;
+  flex-direction: column;
+}
+.containerEditRecord .inputsName .containerInputName .labelName {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.containerEditRecord .inputsName .containerInputName .labelName::after {
+  content: "*";
+  color: #DE0028;
+}
+.containerEditRecord .inputsName .containerInputName .inputName {
+  height: 35.5px;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.containerEditRecord .inputsName .containerInputName .validationInput {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #DE0028;
+}
+.containerEditRecord .containerRegion {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #FFFFFF;
+  padding: 60px 33px 15px;
+}
+.containerEditRecord .containerRegion .containerInputName {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.containerEditRecord .containerRegion .containerInputName .labelName {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.containerEditRecord .containerRegion .containerInputName .inputName {
+  height: 35.5px;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.containerEditRecord .containerRegion .containerInputName .validationInput {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #DE0028;
+}
+.containerEditRecord .containerButtonSave {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #FFFFFF;
+  padding: 0px 15px 15px;
+}
+.containerEditRecord .containerButtonSave .saveCompany {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+.containerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 39.6px 28px 0px 29.4px;
+}
+.containerTitle h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+}
+.containerTitle .containerButtons .buttonAddCompany {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.containerSelectionCompanies {
+  display: flex;
+  justify-content: space-between;
+  margin: 73px 28px 4.5px;
+}
+.containerSelectionCompanies #countSelection {
+  display: none;
+  height: 24px;
+  background-color: rgba(6, 131, 249, 0.2);
+  font-family: "Open Sans", sans-serif;
+  color: #0683F9;
+  padding: 3px 8px;
+  font-size: 13px;
+}
+
+.containerCompaniesDiv {
+  display: flex;
+  flex-direction: column;
+  border: solid #CCCCCC;
+  border-width: 1px;
+  margin: 0px 28px 0px;
+}
+.containerCompaniesDiv .validationInput {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #DE0028;
+}
+.containerCompaniesDiv .headerContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  border-bottom: solid #CCCCCC;
+  border-width: 1px;
+}
+.containerCompaniesDiv .headerContainer .ocupation {
+  width: 11.11%;
+}
+.containerCompaniesDiv .headerContainer .ocupation.titles {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  color: #000000;
+}
+.containerCompaniesDiv .companiesData {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+}
+.containerCompaniesDiv .companiesData .ocupation {
+  width: 11.11%;
+  overflow: auto;
+}
+.containerCompaniesDiv .companiesData .ocupation::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 5px;
+}
+.containerCompaniesDiv .companiesData .ocupation::-webkit-scrollbar-thumb {
+  border: 3px solid #CCCCCC;
+  border-radius: 10px;
+}
+.containerCompaniesDiv .companiesData .ocupation.titles {
+  font-family: "Open Sans", sans-serif;
+  color: #000000;
+}
+.containerCompaniesDiv .companiesData .ocupation.phone {
+  text-align: center;
+}
+.containerCompaniesDiv .companiesData .ocupation.actions {
+  font-family: "Open Sans", sans-serif;
+  color: #0683F9;
+  cursor: pointer;
+}
+
+.modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  position: fixed;
+  opacity: 0.7;
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=organizationsAdmin.css.map */

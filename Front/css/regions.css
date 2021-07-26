@@ -1,0 +1,587 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.textWhite, header .containerHeaderRight .linkHeader {
+  font-family: "Open Sans", sans-serif;
+  color: #FFFFFF;
+}
+
+.formatButton, .containerEditCity .containerButtonSaveCity .saveCity, .containerEditCity .cityName .inputCity, .containerRecordCity .containerButtonSaveCity .saveCity, .containerRecordCity .cityName .inputCity, .containerEditCountry .containerButtonSaveCountry .saveCountry, .containerEditCountry .countryName .inputCountry, .containerRecordCountry .containerButtonSaveCountry .saveCountry, .containerRecordCountry .countryName .inputCountry, .containerRecordRegion .containerButtonSaveRegion .saveRegion, .containerRecordRegion .regionName .inputRegion, .containerButton .createRegion {
+  height: 41px;
+  border: solid;
+  border-width: 1px;
+  outline: none;
+}
+
+.otherFormatButton, #containerRegions .nameRegion .containerButtonUD .deleteButtonCity, #containerRegions .nameRegion .containerButtonUD .editButtonCity, #containerRegions .nameRegion .containerButtonUD .deleteButtonCountry, #containerRegions .nameRegion .containerButtonUD .editButtonCountry, #containerRegions .caret .createButtonCity, #containerRegions .caret .createButtonCountry {
+  border: solid;
+  border-width: 1px;
+  outline: none;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+header {
+  background-color: #1D72C2;
+  display: flex;
+  justify-content: space-between;
+}
+header .containerHeaderLeft {
+  display: flex;
+  margin: 12px 0px 12px 30px;
+}
+header .containerHeaderLeft .logoHeader {
+  height: 50px;
+}
+header .containerHeaderRight {
+  display: flex;
+  align-items: center;
+  margin: 23.6px 30px 22.8px 0px;
+}
+header .containerHeaderRight .linkHeader {
+  opacity: 0.7;
+  text-decoration: none;
+}
+header .containerHeaderRight .linkHeader.space {
+  margin: 0px 34.3px 0px 0px;
+}
+header .containerHeaderRight .linkHeader:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+header .containerHeaderRight .signOut {
+  width: 30px;
+  height: 30px;
+  border: solid;
+  border-width: 1px;
+  outline: none;
+  border-color: #FFFFFF;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.containerButton {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.containerButton .createRegion {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  margin: 25px 25px 0px 0px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+#checkRegion {
+  display: none;
+}
+#checkRegion:checked ~ .containerRecordRegion {
+  left: 0;
+  right: 0;
+}
+
+#checkCountry {
+  display: none;
+}
+#checkCountry:checked ~ .containerRecordCountry {
+  left: 0;
+  right: 0;
+}
+
+#checkCountryEdit {
+  display: none;
+}
+#checkCountryEdit:checked ~ .containerEditCountry {
+  left: 0;
+  right: 0;
+}
+
+#checkCity {
+  display: none;
+}
+#checkCity:checked ~ .containerRecordCity {
+  left: 0;
+  right: 0;
+}
+
+#checkCityEdit {
+  display: none;
+}
+#checkCityEdit:checked ~ .containerEditCity {
+  left: 0;
+  right: 0;
+}
+
+.containerRecordRegion {
+  display: flex;
+  flex-direction: column;
+  background-color: #1D72C2;
+  border: solid;
+  border-width: 1px;
+  border-color: #1D72C2;
+  border-radius: 3px;
+  width: 500px;
+  position: absolute;
+  margin: auto;
+  left: -100%;
+  z-index: 1;
+}
+.containerRecordRegion .headerRegion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+.containerRecordRegion .headerRegion h1 {
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+.containerRecordRegion .headerRegion .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 10px;
+}
+.containerRecordRegion .headerRegion .close .labelClose {
+  position: absolute;
+}
+.containerRecordRegion .headerRegion .close .labelClose i {
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.containerRecordRegion .headerRegion .close .inputClose {
+  position: absolute;
+  display: none;
+}
+.containerRecordRegion .regionName {
+  display: flex;
+  background-color: #FFFFFF;
+  align-items: center;
+  padding: 20px;
+}
+.containerRecordRegion .regionName .labelRegion {
+  width: 30%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerRecordRegion .regionName .inputRegion {
+  width: 70%;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerRecordRegion .containerButtonSaveRegion {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #FFFFFF;
+  padding: 0px 15px 15px;
+}
+.containerRecordRegion .containerButtonSaveRegion .saveRegion {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+.containerRecordCountry {
+  display: flex;
+  flex-direction: column;
+  background-color: #1D72C2;
+  border: solid;
+  border-width: 1px;
+  border-color: #1D72C2;
+  border-radius: 3px;
+  width: 500px;
+  position: absolute;
+  margin: auto;
+  left: -100%;
+  z-index: 1;
+}
+.containerRecordCountry .headerCountry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+.containerRecordCountry .headerCountry h2 {
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+.containerRecordCountry .headerCountry .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 10px;
+}
+.containerRecordCountry .headerCountry .close .labelCloseCountry {
+  position: absolute;
+}
+.containerRecordCountry .headerCountry .close .labelCloseCountry i {
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.containerRecordCountry .headerCountry .close .inputClose {
+  position: absolute;
+  display: none;
+}
+.containerRecordCountry .countryName {
+  display: flex;
+  background-color: #FFFFFF;
+  align-items: center;
+  padding: 20px;
+}
+.containerRecordCountry .countryName .labelCountry {
+  width: 30%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerRecordCountry .countryName .inputCountry {
+  width: 70%;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerRecordCountry .containerButtonSaveCountry {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #FFFFFF;
+  padding: 0px 15px 15px;
+}
+.containerRecordCountry .containerButtonSaveCountry .saveCountry {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+.containerEditCountry {
+  display: flex;
+  flex-direction: column;
+  background-color: #1D72C2;
+  border: solid;
+  border-width: 1px;
+  border-color: #1D72C2;
+  border-radius: 3px;
+  width: 500px;
+  position: absolute;
+  margin: auto;
+  left: -100%;
+  z-index: 1;
+}
+.containerEditCountry .headerCountry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+.containerEditCountry .headerCountry h3 {
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+.containerEditCountry .headerCountry .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 10px;
+}
+.containerEditCountry .headerCountry .close .labelCloseCountry {
+  position: absolute;
+}
+.containerEditCountry .headerCountry .close .labelCloseCountry i {
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.containerEditCountry .headerCountry .close .inputClose {
+  position: absolute;
+  display: none;
+}
+.containerEditCountry .countryName {
+  display: flex;
+  background-color: #FFFFFF;
+  align-items: center;
+  padding: 20px;
+}
+.containerEditCountry .countryName .labelCountry {
+  width: 30%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerEditCountry .countryName .inputCountry {
+  width: 70%;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerEditCountry .containerButtonSaveCountry {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #FFFFFF;
+  padding: 0px 15px 15px;
+}
+.containerEditCountry .containerButtonSaveCountry .saveCountry {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+.containerRecordCity {
+  display: flex;
+  flex-direction: column;
+  background-color: #1D72C2;
+  border: solid;
+  border-width: 1px;
+  border-color: #1D72C2;
+  border-radius: 3px;
+  width: 500px;
+  position: absolute;
+  margin: auto;
+  left: -100%;
+  z-index: 1;
+}
+.containerRecordCity .headerCity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+.containerRecordCity .headerCity h2 {
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+.containerRecordCity .headerCity .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 10px;
+}
+.containerRecordCity .headerCity .close .labelCloseCity {
+  position: absolute;
+}
+.containerRecordCity .headerCity .close .labelCloseCity i {
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.containerRecordCity .headerCity .close .inputClose {
+  position: absolute;
+  display: none;
+}
+.containerRecordCity .cityName {
+  display: flex;
+  background-color: #FFFFFF;
+  align-items: center;
+  padding: 20px;
+}
+.containerRecordCity .cityName .labelCiy {
+  width: 30%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerRecordCity .cityName .inputCity {
+  width: 70%;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerRecordCity .containerButtonSaveCity {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #FFFFFF;
+  padding: 0px 15px 15px;
+}
+.containerRecordCity .containerButtonSaveCity .saveCity {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+.containerEditCity {
+  display: flex;
+  flex-direction: column;
+  background-color: #1D72C2;
+  border: solid;
+  border-width: 1px;
+  border-color: #1D72C2;
+  border-radius: 3px;
+  width: 500px;
+  position: absolute;
+  margin: auto;
+  left: -100%;
+  z-index: 1;
+}
+.containerEditCity .headerCity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+.containerEditCity .headerCity h3 {
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+.containerEditCity .headerCity .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 10px;
+}
+.containerEditCity .headerCity .close .labelCloseCity {
+  position: absolute;
+}
+.containerEditCity .headerCity .close .labelCloseCity i {
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.containerEditCity .headerCity .close .inputClose {
+  position: absolute;
+  display: none;
+}
+.containerEditCity .cityName {
+  display: flex;
+  background-color: #FFFFFF;
+  align-items: center;
+  padding: 20px;
+}
+.containerEditCity .cityName .labelCiy {
+  width: 30%;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerEditCity .cityName .inputCity {
+  width: 70%;
+  border-color: #CCCCCC;
+  border-radius: 3.5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.containerEditCity .containerButtonSaveCity {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #FFFFFF;
+  padding: 0px 15px 15px;
+}
+.containerEditCity .containerButtonSaveCity .saveCity {
+  width: 172px;
+  border-color: #1D72C2;
+  background-color: #1D72C2;
+  color: #FFFFFF;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+
+#containerRegions #errorRegion {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  margin: 0px 0px 0px 25px;
+}
+#containerRegions ul {
+  list-style-type: none;
+}
+#containerRegions .caret {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  margin: 15px 25px 0px 0px;
+}
+#containerRegions .caret .createButtonCountry {
+  height: 30px;
+}
+#containerRegions .caret .createButtonCity {
+  height: 30px;
+}
+#containerRegions .nameRegion {
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+}
+#containerRegions .nameRegion::before {
+  content: "▶";
+  color: #000000;
+  display: inline-block;
+  margin-right: 6px;
+}
+#containerRegions .nameRegion .containerButtonUD {
+  display: flex;
+}
+#containerRegions .nameRegion .containerButtonUD .editButtonCountry {
+  margin: 0px 20px;
+}
+#containerRegions .nameRegion .containerButtonUD .editButtonCity {
+  margin: 0px 20px;
+}
+#containerRegions .caret-down::before {
+  transform: rotate(90deg);
+}
+#containerRegions .nested {
+  display: none;
+}
+#containerRegions .active {
+  display: block;
+}
+
+.modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  position: fixed;
+  opacity: 0.7;
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=regions.css.map */
